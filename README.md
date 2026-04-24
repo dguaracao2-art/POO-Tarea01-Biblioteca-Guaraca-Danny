@@ -1,7 +1,7 @@
 # Sistema de Biblioteca Universitaria
 
 ## Información del Estudiante
-- Nombre: Danny Ismael Guaraca Orozco
+- Nombre: Robin Gabriel Leiton Cabrera
 - Carrera: Software
 - Semestre: 4 Semestre 
 
