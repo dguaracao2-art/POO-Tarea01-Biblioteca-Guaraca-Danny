@@ -1,0 +1,70 @@
+@startuml Diagrama_Clases_Biblioteca
+
+skinparam classAttributeIconSize 0
+skinparam classFontSize 14
+skinparam classFontStyle bold
+
+class Persona {
+    - _cedula: str
+    - _nombre: str
+    - _apellido: str
+    + cedula: str <<property>>
+    + nombre: str <<property>>
+    + apellido: str <<property>>
+    + __str__(): str
+}
+
+class Estudiante {
+    - _carrera: str
+    + carrera: str <<property>>
+    + __str__(): str
+}
+
+class Libro {
+    - _isbn: str
+    - _titulo: str
+    - _autor: str
+    - _disponible: bool
+    + isbn: str <<property>>
+    + titulo: str <<property>>
+    + autor: str <<property>>
+    + disponible: bool <<property>>
+    + prestar(): None
+    + devolver(): None
+    + __str__(): str
+}
+
+class Prestamo {
+    - _libro: Libro
+    - _estudiante: Estudiante
+    - _fecha_prestamo: str
+    - _fecha_devolucion: str
+    - _activo: bool
+    + libro: Libro <<property>>
+    + estudiante: Estudiante <<property>>
+    + activo: bool <<property>>
+    + registrar_devolucion(): None
+    + __str__(): str
+}
+
+class Biblioteca {
+    - _nombre: str
+    - _libros: list
+    - _estudiantes: list
+    - _prestamos: list
+    + registrar_libro(libro: Libro): None
+    + registrar_estudiante(est: Estudiante): None
+    + prestar_libro(isbn, cedula, fecha, fecha_dev): str
+    + devolver_libro(isbn, cedula): str
+    + consultar_prestamos_activos(cedula): list
+    + __str__(): str
+}
+
+Estudiante --|> Persona : hereda
+Biblioteca "1" *-- "1..*" Libro : contiene
+Biblioteca "1" o-- "0..*" Estudiante : registra
+Biblioteca "1" *-- "0..*" Prestamo : gestiona
+Prestamo "0..*" --> "1" Libro : referencia
+Prestamo "0..*" --> "1" Estudiante : referencia
+
+@enduml
