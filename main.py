@@ -16,6 +16,7 @@ def main():
     libro1 = Libro("978-0-13-468599-1", "El Principito", "Antoine de Saint-Exupéry")
     libro2 = Libro("978-0-06-112008-4", "Cien Años de Soledad", "Gabriel García Márquez")
     libro3 = Libro("978-84-376-0494-7", "Don Quijote de la Mancha", "Miguel de Cervantes")
+    libro4 = Libro("978-85-98-04664-9", "ingenieria De Software", "Rogger Pressman")
 
     biblioteca.registrar_libro(libro1)
     biblioteca.registrar_libro(libro2)
@@ -24,6 +25,7 @@ def main():
     print("\n── Registrando estudiantes ──")
     est1 = Estudiante("0926400615", "María", "López", "Ingeniería en Sistemas")
     est2 = Estudiante("0912345678", "Carlos", "Ramírez", "Ingeniería Industrial")
+    est3 = Estudiante("0913956874", "Estevan", "Ruiz", "Ingeniería Alimentos")
 
     biblioteca.registrar_estudiante(est1)
     biblioteca.registrar_estudiante(est2)
