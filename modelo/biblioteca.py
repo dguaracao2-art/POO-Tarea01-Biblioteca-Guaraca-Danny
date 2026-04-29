@@ -37,7 +37,7 @@ class Biblioteca:
         return None
 
     def prestar_libro(self, isbn: str, cedula: str,
-                      fecha_prestamo: str, fecha_devolucion: str) -> str:
+                    fecha_prestamo: str, fecha_devolucion: str) -> str:
         """Registra un préstamo si el libro está disponible."""
         libro = self._buscar_libro(isbn)
         if libro is None:
